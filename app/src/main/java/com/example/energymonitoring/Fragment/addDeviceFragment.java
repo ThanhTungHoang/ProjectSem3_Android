@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -59,6 +60,7 @@ public class addDeviceFragment extends Fragment implements View.OnClickListener 
     }
     @Override
     public void onClick(View v) {
+        Toast.makeText(getContext(), "Add device Successful", Toast.LENGTH_SHORT).show();
         Inputname = InputName.getText().toString();
         Inputid = InputId.getText().toString();
         Log.d("name: ", Inputname);

@@ -64,7 +64,7 @@ public class RecyclerviewItemAdapter extends RecyclerView.Adapter<RecyclerviewIt
         holder.V.setText("V: " +String.valueOf(item.getV()));
         holder.A.setText("A: " +String.valueOf(item.getA()));
         holder.W.setText("W: " +String.valueOf(item.getW()));
-        holder.VND.setText("Price: " +String.valueOf(item.getVnd()) +"VND");
+        holder.VND.setText("Price: " +String.valueOf(item.getVnd()) +" VND");
         holder.kWh.setText("kWh: " +String.valueOf(item.getkWh()));
 
         String stateSwt = String.valueOf(item.getRelay());

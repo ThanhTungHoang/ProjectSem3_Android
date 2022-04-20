@@ -3,31 +3,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Device"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:layout_gravity="center"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/colorTextInputBackground"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp">
 
-    <EditText
-        android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@android:color/transparent"
+                android:drawablePadding="12dp"
+                android:hint="Set Name"
+                android:imeOptions="actionNext"
+                android:minWidth="320dp"
+                android:minHeight="50dp"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="input Name"
-        android:textSize="20dp"
-        android:id="@+id/input_name"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="input Id"
-        android:textSize="20dp"
-        android:id="@+id/input_id"/>
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/colorTextInputBackground"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@android:color/transparent"
+                android:drawablePadding="12dp"
+                android:hint="Set Id"
+                android:imeOptions="actionNext"
+                android:minWidth="320dp"
+                android:minHeight="50dp"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ok"
         android:textSize="20dp"
+        android:layout_gravity="center"
         android:id="@+id/input_btn"/>
+    <TextView
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*NOTE:"/>
+    <TextView
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*Make sure the device is connected to the network."/>ư
+    <TextView
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*Make sure the id matches the device id."/>
 
 
 </LinearLayout>
