@@ -9,11 +9,16 @@
         android:layout_height="wrap_content"
         android:text="View"
         android:textSize="40dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return"
+        android:id="@+id/btn_return"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="5dp"/>
 
 </LinearLayout>
