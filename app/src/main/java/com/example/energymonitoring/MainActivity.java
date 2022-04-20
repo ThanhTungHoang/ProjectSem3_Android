@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    protected Button a;
+    protected Button a, b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
