@@ -64,6 +64,8 @@ public class RecyclerviewItemAdapter extends RecyclerView.Adapter<RecyclerviewIt
         holder.V.setText("V: " +String.valueOf(item.getV()));
         holder.A.setText("A: " +String.valueOf(item.getA()));
         holder.W.setText("W: " +String.valueOf(item.getW()));
+        holder.VND.setText("Price: " +String.valueOf(item.getVnd()) +"VND");
+        holder.kWh.setText("kWh: " +String.valueOf(item.getkWh()));
 
         String stateSwt = String.valueOf(item.getRelay());
         if(stateSwt.equals("on")){
@@ -127,7 +129,7 @@ public class RecyclerviewItemAdapter extends RecyclerView.Adapter<RecyclerviewIt
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView Name,Id, V, A, W;
+        public TextView Name,Id, V, A, W, VND, kWh;
         private LinearLayout itemLayout;
         private ImageButton imageButton;
         public Switch btnSwitch;
@@ -141,6 +143,8 @@ public class RecyclerviewItemAdapter extends RecyclerView.Adapter<RecyclerviewIt
             V = itemView.findViewById(R.id.tvV);
             A = itemView.findViewById(R.id.tvA);
             W = itemView.findViewById(R.id.tvW);
+            VND = itemView.findViewById(R.id.tvVnd);
+            kWh = itemView.findViewById(R.id.tvKwh);
             tvStateRelay = itemView.findViewById(R.id.tv_get_state_relay);
 
             SeeMore = itemView.findViewById(R.id.btn_see_more);
