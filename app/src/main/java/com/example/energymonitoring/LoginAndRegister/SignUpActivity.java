@@ -26,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://testauthen-15164-default-rtdb.firebaseio.com/");
-    private EditText editEmail, editPassword;
+    private EditText editEmail, editPassword, editName;
     private Button btnSignUp;
     private ProgressDialog progressDialog;
     private Toolbar toolbarBtnReturn;
@@ -62,6 +62,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void onClickSignUp() {
+        String strName = editName.getText().toString().trim();
         String strEmail = editEmail.getText().toString().trim();
         String strPassword = editPassword.getText().toString().trim();
         FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -75,6 +76,7 @@ public class SignUpActivity extends AppCompatActivity {
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         String uid = user.getUid();
                         Log.d("uid: ", uid);
+                        databaseReference.child(uid).child("Name").setValue(strName);
                         databaseReference.child(uid).child("Email").setValue(strEmail);
                         databaseReference.child(uid).child("Device").setValue("null");
 
@@ -97,6 +99,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void initUI() {
+        editName = findViewById(R.id.edit_name);
         editEmail = findViewById(R.id.edit_email);
         editPassword = findViewById(R.id.edit_password);
         btnSignUp = findViewById(R.id.btn_Signup);

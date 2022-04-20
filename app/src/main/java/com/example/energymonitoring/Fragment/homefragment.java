@@ -55,6 +55,7 @@ public class homefragment extends Fragment {
     private FirebaseUser user;
     private String uid;
     private LinearLayoutManager linearLayoutManager, alinearLayoutManager;
+    public String a;
     DatabaseReference databaseReference;
     @Nullable
     @Override
@@ -259,6 +260,8 @@ public class homefragment extends Fragment {
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Items items = snapshot.getValue(Items.class);
+                a = items.getRelay();
+
                 if(items == null || itemsList == null || itemsList.isEmpty() ){
                     return;
                 }

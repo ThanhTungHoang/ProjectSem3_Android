@@ -40,5 +40,6 @@
     <string name="email">Email</string>
     <string name="or_sign_in_by">Or Sign in by</string>
     <string name="or_sign_up_by">Or Sign up by</string>
+    <string name="full_name">Full Name</string>
 
 </resources>

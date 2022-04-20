@@ -3,6 +3,7 @@ package com.example.energymonitoring;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 
@@ -26,6 +27,8 @@ import com.bumptech.glide.Glide;
 import com.example.energymonitoring.Fragment.addDeviceFragment;
 import com.example.energymonitoring.Fragment.homefragment;
 import com.example.energymonitoring.LoginAndRegister.SingInActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -50,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FirebaseUser user;
     private DatabaseReference databaseReference;
     private String uid;
+    private  Button btnMenu;
     ///////////
 
     @Override
@@ -66,6 +70,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        DatabaseReference a = databaseReference.child(uid).child("Email");
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String count = dataSnapshot.getValue(String.class);
+                Log.d("hih", count);
+                getSupportActionBar().setTitle(count);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+        a.addListenerForSingleValueEvent(valueEventListener);
+
+
         initUI();
 
 
@@ -75,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         // bat su kien trong navigation view
         mnavigationView.setNavigationItemSelectedListener(this);
+        ///
         // vao mo home luon
         replaceFragment(new homefragment());
         mnavigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
@@ -87,6 +110,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     private void showInfor() {
+        // get name
+        DatabaseReference a = databaseReference.child(uid).child("Name");
+        ValueEventListener getName = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String name = dataSnapshot.getValue(String.class);
+                Log.d("hih", name);
+                getSupportActionBar().setTitle("Hi, " +name +"!");
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+        a.addListenerForSingleValueEvent(getName);
+        // get size device
         DatabaseReference usersRef = databaseReference.child(uid).child("Device");
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -95,6 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 //get size Device
                 tvName.setVisibility(View.VISIBLE);
                 tvName.setText((int) count +" Device");
+
 
             }
 
