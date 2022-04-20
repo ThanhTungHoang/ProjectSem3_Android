@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "762978198075",
+    "firebase_url": "https://testauthen-15164-default-rtdb.firebaseio.com",
+    "project_id": "testauthen-15164",
+    "storage_bucket": "testauthen-15164.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762978198075:android:620e060123a499721f321e",
+        "android_client_info": {
+          "package_name": "com.example.energymonitoring"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762978198075-h9mrv3qljmopsrlv2s51psaul5epk7pl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg3xUANSo04zXTXaRIYnBskddqC36N8WI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762978198075-h9mrv3qljmopsrlv2s51psaul5epk7pl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762978198075:android:6dd9f2ab2bf9d1bb1f321e",
+        "android_client_info": {
+          "package_name": "com.example.navigationdrawertoolbar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762978198075-h9mrv3qljmopsrlv2s51psaul5epk7pl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg3xUANSo04zXTXaRIYnBskddqC36N8WI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762978198075-h9mrv3qljmopsrlv2s51psaul5epk7pl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762978198075:android:0abf2f04a3e65ef51f321e",
+        "android_client_info": {
+          "package_name": "com.example.testauthen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762978198075-h9mrv3qljmopsrlv2s51psaul5epk7pl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg3xUANSo04zXTXaRIYnBskddqC36N8WI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762978198075-h9mrv3qljmopsrlv2s51psaul5epk7pl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
