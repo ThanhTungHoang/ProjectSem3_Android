@@ -10,7 +10,7 @@
         android:label="Demo App"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NavigationDrawerToolbar">
+        android:theme="@style/Theme.EnergyMonitoring">
 
         <activity
             android:name=".LoginAndRegister.ForgotPassWord"
