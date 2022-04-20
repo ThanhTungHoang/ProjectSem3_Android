@@ -91,6 +91,12 @@ public class addDeviceFragment extends Fragment implements View.OnClickListener 
                                     .child(Inputid).child("A").setValue("0");
                             databaseReference.child(uid).child("Device")
                                     .child(Inputid).child("Relay").setValue("off");
+                            databaseReference.child(uid).child("Device")
+                                    .child(Inputid).child("kWh").setValue("0");
+                            databaseReference.child(uid).child("Device")
+                                    .child(Inputid).child("Vnd").setValue("0");
+                            databaseReference.child(uid).child("Device")
+                                    .child(Inputid).child("Energy");
 
 
 

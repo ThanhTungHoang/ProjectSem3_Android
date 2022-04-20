@@ -12,17 +12,37 @@ public class Items {
     private String A;
     private String W;
     private String Relay;
+    private String kWh;
+    private String Vnd;
     public Items() {
 
     }
 
-    public Items(String name, String id, String v, String a, String w, String relay) {
+    public Items(String name, String id, String v, String a, String w, String relay, String kwh, String vnd) {
         Name = name;
         Id = id;
         V = v;
         A = a;
         W = w;
         Relay = relay;
+        kWh = kwh;
+        Vnd = vnd;
+    }
+
+    public String getkWh() {
+        return kWh;
+    }
+
+    public void setkWh(String kwh) {
+        kWh = kwh;
+    }
+
+    public String getVnd() {
+        return Vnd;
+    }
+
+    public void setVnd(String vnd) {
+        Vnd = vnd;
     }
 
     public String getName() {

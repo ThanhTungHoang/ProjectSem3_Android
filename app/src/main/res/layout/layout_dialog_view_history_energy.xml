@@ -5,11 +5,13 @@
     android:background="#FFFFFF"
     android:orientation="vertical">
     <TextView
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View"
+        android:text="History"
         android:textSize="40dp"/>
     <Button
+        android:layout_gravity="right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Return"

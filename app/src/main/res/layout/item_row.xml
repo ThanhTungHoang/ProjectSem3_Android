@@ -58,21 +58,23 @@
                 android:layout_height="wrap_content"
                 android:textColor="#787178"
                 android:text="State relay: "/>
+
+            <Button
+                android:id="@+id/btn_see_more"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:backgroundTint="@color/white"
+                android:text="View history"
+                android:textColor="#787178"
+                android:layout_gravity="right"
+
+                />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/btn_see_more"
-                android:text="View history"
-                android:textColor="#787178"
-                android:backgroundTint="@color/white"
-                android:background="?android:attr/selectableItemBackground"
-
-                />
 
         </LinearLayout>
 
