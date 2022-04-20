@@ -4,13 +4,27 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/drawable-hdpi/button1_bg.xml" value="0.1" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/drawable-hdpi/ic_mail.xml" value="0.1" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/drawable-hdpi/ic_phone.xml" value="0.1" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/drawable-hdpi/ic_plus.xml" value="0.1" />
         <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.1" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.1" />
         <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/drawable/ic_favorite.xml" value="0.1" />
         <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/drawable/ic_more.xml" value="0.1" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/drawable/ic_power.xml" value="0.1" />
         <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/layout/activity_splash.xml" value="0.15715579710144928" />
         <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/layout/homefragment.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/layout/item_row.xml" value="0.25" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/layout/layout_dialog_view_history_energy.xml" value="0.10208333333333333" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/layout/layout_header_navigation.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/layout/layout_login.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/layout/layout_register.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/menu/menu.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/menu/menu_navigation.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/menu/popup_button_more.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/hoang/Desktop/ProjectSem3_Android/app/src/main/res/menu/style.xml" value="0.20416666666666666" />
       </map>
     </option>

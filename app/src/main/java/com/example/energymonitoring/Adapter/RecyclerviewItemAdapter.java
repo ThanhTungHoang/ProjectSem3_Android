@@ -64,7 +64,26 @@ public class RecyclerviewItemAdapter extends RecyclerView.Adapter<RecyclerviewIt
         holder.V.setText("V: " +String.valueOf(item.getV()));
         holder.A.setText("A: " +String.valueOf(item.getA()));
         holder.W.setText("W: " +String.valueOf(item.getW()));
+
+        String stateSwt = String.valueOf(item.getRelay());
+        if(stateSwt.equals("on")){
+            holder.btnSwitch.setChecked(true);
+        }
+        if(stateSwt.equals("off")){
+            holder.btnSwitch.setChecked(false);
+        }
         holder.tvStateRelay.setText("Relay: " +String.valueOf(item.getRelay()));
+        holder.btnSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    mIClickListener.onRelay(item);
+                    Toast.makeText(buttonView.getContext(), "on", Toast.LENGTH_SHORT).show();
+                } else {
+                    mIClickListener.offRelay(item);
+                    Toast.makeText(buttonView.getContext(), "off", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         holder.imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,19 +109,6 @@ public class RecyclerviewItemAdapter extends RecyclerView.Adapter<RecyclerviewIt
                 popupMenu.show();
             }
         });
-        holder.OnRelay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mIClickListener.onRelay(item);
-
-            }
-        });
-        holder.OffRelay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mIClickListener.offRelay(item);
-            }
-        });
         holder.SeeMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,6 +116,8 @@ public class RecyclerviewItemAdapter extends RecyclerView.Adapter<RecyclerviewIt
             }
         });
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -122,7 +130,7 @@ public class RecyclerviewItemAdapter extends RecyclerView.Adapter<RecyclerviewIt
         public TextView Name,Id, V, A, W;
         private LinearLayout itemLayout;
         private ImageButton imageButton;
-        private Switch btnSwitch;
+        public Switch btnSwitch;
         public TextView tvStateRelay;
         public Button OnRelay, OffRelay, SeeMore;
 
@@ -134,9 +142,9 @@ public class RecyclerviewItemAdapter extends RecyclerView.Adapter<RecyclerviewIt
             A = itemView.findViewById(R.id.tvA);
             W = itemView.findViewById(R.id.tvW);
             tvStateRelay = itemView.findViewById(R.id.tv_get_state_relay);
-            OnRelay = itemView.findViewById(R.id.btn_on_relay);
-            OffRelay = itemView.findViewById(R.id.btn_off_relay);
+
             SeeMore = itemView.findViewById(R.id.btn_see_more);
+            btnSwitch = itemView.findViewById(R.id.btnswt);
 //            Boolean switchState = btnSwitch.isChecked();
 //            btnSwitch.setChecked(true);
 //            itemLayout =  itemView.findViewById(R.id.itemLayout);
