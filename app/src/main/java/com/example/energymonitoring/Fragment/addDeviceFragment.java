@@ -60,57 +60,51 @@ public class addDeviceFragment extends Fragment implements View.OnClickListener 
     }
     @Override
     public void onClick(View v) {
-        Toast.makeText(getContext(), "Add device Successful", Toast.LENGTH_SHORT).show();
         Inputname = InputName.getText().toString();
         Inputid = InputId.getText().toString();
         Log.d("name: ", Inputname);
         Log.d("id: ", Inputid);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
-        databaseReference.child(uid)
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+        if(Inputname.isEmpty() || Inputid.isEmpty()){
+            Toast.makeText(getContext(), "Name or id is empty", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(getContext(), "Add device Successful", Toast.LENGTH_SHORT).show();
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            databaseReference.child(uid)
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
 //                        sizeDevice = snapshot.getChildrenCount();
-                        //get size Device
-
-
-                        if(snapshot.hasChild(uid)){
-
-                        }else {
+                            //get size Device
+                            if(snapshot.hasChild(uid)){
+                            }else {
 //                    databaseReference.child(uid).child("Device")
 //                            .child(Inputid).child("Name").setValue(Inputname);
-
-                            databaseReference.child(uid).child("Device")
-                                    .child(Inputid).child("Id").setValue(Inputid);
-                            databaseReference.child(uid).child("Device")
-                                    .child(Inputid).child("Name").setValue(Inputname);
-                            databaseReference.child(uid).child("Device")
-                                    .child(Inputid).child("V").setValue("0");
-                            databaseReference.child(uid).child("Device")
-                                    .child(Inputid).child("W").setValue("0");
-                            databaseReference.child(uid).child("Device")
-                                    .child(Inputid).child("A").setValue("0");
-                            databaseReference.child(uid).child("Device")
-                                    .child(Inputid).child("Relay").setValue("off");
-                            databaseReference.child(uid).child("Device")
-                                    .child(Inputid).child("kWh").setValue("0");
-                            databaseReference.child(uid).child("Device")
-                                    .child(Inputid).child("Vnd").setValue("0");
-                            databaseReference.child(uid).child("Device")
-                                    .child(Inputid).child("Energy");
-
-
-
+                                databaseReference.child(uid).child("Device")
+                                        .child(Inputid).child("Id").setValue(Inputid);
+                                databaseReference.child(uid).child("Device")
+                                        .child(Inputid).child("Name").setValue(Inputname);
+                                databaseReference.child(uid).child("Device")
+                                        .child(Inputid).child("V").setValue("0");
+                                databaseReference.child(uid).child("Device")
+                                        .child(Inputid).child("W").setValue("0");
+                                databaseReference.child(uid).child("Device")
+                                        .child(Inputid).child("A").setValue("0");
+                                databaseReference.child(uid).child("Device")
+                                        .child(Inputid).child("Relay").setValue("off");
+                                databaseReference.child(uid).child("Device")
+                                        .child(Inputid).child("kWh").setValue("0");
+                                databaseReference.child(uid).child("Device")
+                                        .child(Inputid).child("Vnd").setValue("0");
+                                databaseReference.child(uid).child("Device")
+                                        .child(Inputid).child("Energy");
+                            }
                         }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    });
+        }
 
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
     }
 }

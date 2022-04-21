@@ -65,37 +65,42 @@ public class SignUpActivity extends AppCompatActivity {
         String strName = editName.getText().toString().trim();
         String strEmail = editEmail.getText().toString().trim();
         String strPassword = editPassword.getText().toString().trim();
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        progressDialog.show();
-        auth.createUserWithEmailAndPassword(strEmail, strPassword)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
-                        // create key readtimedatabase
-                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        String uid = user.getUid();
-                        Log.d("uid: ", uid);
-                        databaseReference.child(uid).child("Name").setValue(strName);
-                        databaseReference.child(uid).child("Email").setValue(strEmail);
-                        databaseReference.child(uid).child("Device").setValue("null");
+        if(strName.isEmpty() || strEmail.isEmpty() || strPassword.isEmpty()){
+            Toast.makeText(SignUpActivity.this, "Empty!!!", Toast.LENGTH_SHORT).show();
+        }else{
+            FirebaseAuth auth = FirebaseAuth.getInstance();
+            progressDialog.show();
+            auth.createUserWithEmailAndPassword(strEmail, strPassword)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            progressDialog.dismiss();
+                            // create key readtimedatabase
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            String uid = user.getUid();
+                            Log.d("uid: ", uid);
+                            databaseReference.child(uid).child("Name").setValue(strName);
+                            databaseReference.child(uid).child("Email").setValue(strEmail);
+                            databaseReference.child(uid).child("Device").setValue("null");
 
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("mesager", "createUserWithEmail:success");
-                            Toast.makeText(SignUpActivity.this, "createUserWithEmail:success.", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finishAffinity();
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d("mesager", "createUserWithEmail:success");
+                                Toast.makeText(SignUpActivity.this, "createUserWithEmail:success.", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finishAffinity();
 
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("mesager", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(SignUpActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w("mesager", "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(SignUpActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
 
+                            }
                         }
-                    }
-                });
+                    });
+        }
+
     }
 
     private void initUI() {

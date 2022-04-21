@@ -62,26 +62,32 @@ public class SingInActivity extends AppCompatActivity {
     private void onClickSignIn() {
         String strEmail = editEmail.getText().toString().trim();
         String strPassword = editPassword.getText().toString().trim();
-        auth = FirebaseAuth.getInstance();
-        progressDialog.show();
-        auth.signInWithEmailAndPassword(strEmail, strPassword)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
-                        if (task.isSuccessful()) {
-                            Toast.makeText(SingInActivity.this, "signInWithEmail:success",Toast.LENGTH_SHORT).show();
-                            Log.d("Messager", "signInWithEmail:success");
-                            Intent intent = new Intent(SingInActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finishAffinity();
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("Messager", "signInWithEmail:failure", task.getException());
-                            Toast.makeText(SingInActivity.this, "Authentication failed.",Toast.LENGTH_SHORT).show();
+        if(strEmail.isEmpty() || strPassword.isEmpty()){
+            Toast.makeText(SingInActivity.this, "Email or password is empty", Toast.LENGTH_SHORT).show();
+        }else{
+            auth = FirebaseAuth.getInstance();
+            progressDialog.show();
+            auth.signInWithEmailAndPassword(strEmail, strPassword)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            progressDialog.dismiss();
+                            if (task.isSuccessful()) {
+                                Toast.makeText(SingInActivity.this, "Sign in with email success!",Toast.LENGTH_SHORT).show();
+                                Log.d("Messager", "signInWithEmail:success");
+                                Intent intent = new Intent(SingInActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finishAffinity();
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w("Messager", "signInWithEmail:failure", task.getException());
+                                Toast.makeText(SingInActivity.this, "Wrong email or password!.",Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+
+        }
+
 
     }
 
