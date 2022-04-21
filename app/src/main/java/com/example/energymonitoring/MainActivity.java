@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.energymonitoring.Fragment.addDeviceFragment;
+import com.example.energymonitoring.Fragment.chagePassFragment;
 import com.example.energymonitoring.Fragment.homefragment;
 import com.example.energymonitoring.LoginAndRegister.SingInActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public  static long sizeDevice;
     private static final int Fragment_Home = 0;
     private static final int addDevice_Fragment = 1;
-    private static final int Fragment_History = 2;
+    private static final int chagePass_Fragment = 2;
     private int mCurrentFragment = Fragment_Home;
     private ImageView imgAvatar;
     private TextView tvName, tvEmail;
@@ -200,10 +201,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
         else if(id == R.id.nav_addDevice) {
-            if( mCurrentFragment != addDevice_Fragment) {
+            if (mCurrentFragment != addDevice_Fragment) {
                 replaceFragment(new addDeviceFragment());
                 mCurrentFragment = addDevice_Fragment;
             }
+        }
+        else if(id == R.id.nav_change_pass) {
+                if (mCurrentFragment != chagePass_Fragment) {
+                replaceFragment(new chagePassFragment());
+                    mCurrentFragment = chagePass_Fragment;
+                }
+
 
         }else if(id == R.id.nav_sign_out){
             FirebaseAuth.getInstance().signOut();
